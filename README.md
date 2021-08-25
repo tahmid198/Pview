@@ -57,7 +57,6 @@ The scene delegate will help set up the scenes of our app, as well as  their ini
 <p>
 
 1. Table views will only manage the layout of the data. They will not manage the data itself. To do this we must provide the table with a data source object by implementing UITableViewDataSource.
-
 ![image walktrough](./images/UITableViewDataSource.png)
 	- UITableViewDataSource requires two data source methods: one to provide the number of rows in the table and one to provide a cell for each row.
 	- "Dequeuing a cell optimizes performance because it returns a reusable cell, rather than displaying and removing each cell instance. Dequeuing ensures that table views perform well even when processing vast quantities of data."
