@@ -11,18 +11,16 @@ class HomeViewController: UIViewController {
    
     
 
-    var tableView = UITableView(frame: CGRect(x:0, y:0, width: 200, height: 200))
+    var tableView = UITableView(frame: CGRect(x:0, y:0, width: 200, height: 200)) //creates table view with the specified frame and we can add style: as another parameter
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .blue
         setUpLayouts()
     }
-
-
 }
 
-extension HomeViewController { // this extension will allow you to call functions anywhere and from any file
+extension HomeViewController {
     func setUpTableView(){
         view.addSubview(tableView) // we added the tableview to the view
         tableView.delegate = self
@@ -44,8 +42,7 @@ extension HomeViewController { // this extension will allow you to call function
         setUpTableView()
         
     }
-    
-    }
+}
 
     extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +51,6 @@ extension HomeViewController { // this extension will allow you to call function
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell") as! HomeCell
-            //cell.textLabel?.text = "Here"
             return cell // creates cells
     }
 }
